@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">15% </span>
+                <span class="strong">11.53% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>6/40</span>
+                <span class='fraction'>6/52</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">15% </span>
+                <span class="strong">11.53% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>6/40</span>
+                <span class='fraction'>6/52</span>
             </div>
         
             
@@ -103,12 +103,36 @@
 <a name='L38'></a><a href='#L38'>38</a>
 <a name='L39'></a><a href='#L39'>39</a>
 <a name='L40'></a><a href='#L40'>40</a>
-<a name='L41'></a><a href='#L41'>41</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">52x</span>
-<span class="cline-any cline-yes">52x</span>
-<span class="cline-any cline-yes">52x</span>
-<span class="cline-any cline-yes">52x</span>
-<span class="cline-any cline-yes">52x</span>
-<span class="cline-any cline-yes">52x</span>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-yes">94x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -163,23 +187,35 @@ export <span class="fstat-no" title="function not covered" >function printHelp()
 <span class="cstat-no" title="statement not covered" >  ${green('destroy page &lt;name&gt;')}       ${gray('Delete a page (alias: d p)')}</span>
 <span class="cstat-no" title="statement not covered" >  ${green('destroy bridge &lt;name&gt;')}     ${gray('Delete a shared reactive bridge')}</span>
 <span class="cstat-no" title="statement not covered" >  ${green('destroy guard &lt;name&gt;')}      ${gray('Delete a route guard')}</span>
-<span class="cstat-no" title="statement not covered" >  ${green('build (b)')}                 ${gray('Build the project using configured output directory')}</span>
+<span class="cstat-no" title="statement not covered" >  ${green('build (b)')}                 ${gray('Build for production: minified runtime, optimized output')}</span>
 <span class="cstat-no" title="statement not covered" >  ${green('clean')}                     ${gray('Clear build output directory')}</span>
 <span class="cstat-no" title="statement not covered" >  ${green('check (lint)')}              ${gray('Validate templates without building')}</span>
 <span class="cstat-no" title="statement not covered" >  ${green('doctor')}                    ${gray('Diagnose environment, config, and project health')}</span>
 <span class="cstat-no" title="statement not covered" >  ${green('env')}                       ${gray('Print and validate active environment variables')}</span>
+<span class="cstat-no" title="statement not covered" >  ${green('explain &lt;CODE&gt;')}            ${gray('Explain a compiler/runtime error or warning code')}</span>
 <span class="cstat-no" title="statement not covered" >  ${green('inspect (i)')}               ${gray('Inspect project route and component hierarchy')}</span>
-<span class="cstat-no" title="statement not covered" >  ${green('stats (s)')}                ${gray('Display component &amp; bundle footprint metrics')}</span>
+<span class="cstat-no" title="statement not covered" >  ${green('stats (s)')}                 ${gray('Display component &amp; bundle footprint metrics')}</span>
+<span class="cstat-no" title="statement not covered" >  ${green('trace list')}                ${gray('List recorded causal traces')}</span>
+<span class="cstat-no" title="statement not covered" >  ${green('trace view &lt;id|latest&gt;')}    ${gray('Print a trace as a causal tree: event to DOM patch')}</span>
+<span class="cstat-no" title="statement not covered" >  ${green('trace export &lt;id|latest&gt;')}  ${gray('Turn a recorded trace into a regression test')}</span>
+<span class="cstat-no" title="statement not covered" >  ${green('trace prune')}               ${gray('Remove stored traces')}</span>
 <span class="cstat-no" title="statement not covered" >  ${green('serve [port]')}              ${gray('Start dev server with hot-reload (default: 3000)')}</span>
 <span class="cstat-no" title="statement not covered" >  ${green('watch (w)')}                 ${gray('Watch for file changes and rebuild automatically')}</span>
 <span class="cstat-no" title="statement not covered" >  ${green('help')}                      ${gray('Show this help message')}</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >${bold(cyan('Options:'))}</span>
+<span class="cstat-no" title="statement not covered" >  ${green('--dev')}                     ${gray('Build for development: readable runtime, inline CSS source maps')}</span>
+<span class="cstat-no" title="statement not covered" >  ${green('--prod')}                    ${gray('Build for production (the default for "build")')}</span>
 <span class="cstat-no" title="statement not covered" >  ${green('--dry-run, -d')}             ${gray('Preview actions without writing or deleting any files')}</span>
+<span class="cstat-no" title="statement not covered" >  ${green('--with-test')}               ${gray('Generate a colocated unit test file alongside the component')}</span>
+<span class="cstat-no" title="statement not covered" >  ${green('--no-test')}                 ${gray('Skip generating unit test files')}</span>
 <span class="cstat-no" title="statement not covered" >  ${green('--template, -t &lt;name&gt;')}     ${gray('Use a custom scaffold template for code generation')}</span>
 <span class="cstat-no" title="statement not covered" >  ${green('--json, -j')}                ${gray('Output check/lint validation diagnostics in JSON format')}</span>
 <span class="cstat-no" title="statement not covered" >  ${green('--watch, -w')}               ${gray('Watch project component files for continuous template linting')}</span>
 <span class="cstat-no" title="statement not covered" >  ${green('--no-color')}                ${gray('Disable colored output (the NO_COLOR variable is honored too)')}</span>
+<span class="cstat-no" title="statement not covered" >  ${green('--trace')}                   ${gray('Record a causal trace while serving (dev only, off by default)')}</span>
+<span class="cstat-no" title="statement not covered" >  ${green('--out, -o &lt;file&gt;')}          ${gray('Where "trace export" writes the generated regression test')}</span>
+<span class="cstat-no" title="statement not covered" >  ${green('--keep=&lt;n&gt;, --all')}         ${gray('How much "trace prune" removes')}</span>
 <span class="cstat-no" title="statement not covered" >  ${green('--version, -v')}             ${gray('Output the current version')}</span>
 <span class="cstat-no" title="statement not covered" >    `);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
@@ -190,7 +226,7 @@ export <span class="fstat-no" title="function not covered" >function printHelp()
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-08-22T10:26:33.880Z
+                at 2026-08-29T14:58:05.045Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
