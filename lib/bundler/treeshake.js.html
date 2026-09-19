@@ -1,0 +1,874 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for lib/bundler/treeshake.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">lib/bundler</a> treeshake.js</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">90.11% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>237/263</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">74.24% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>49/66</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>6/6</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">90.11% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>237/263</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+        <template id="filterTemplate">
+            <div class="quiet">
+                Filter:
+                <input type="search" id="fileSearch">
+            </div>
+        </template>
+    </div>
+    <div class='status-line high'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a>
+<a name='L56'></a><a href='#L56'>56</a>
+<a name='L57'></a><a href='#L57'>57</a>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a>
+<a name='L82'></a><a href='#L82'>82</a>
+<a name='L83'></a><a href='#L83'>83</a>
+<a name='L84'></a><a href='#L84'>84</a>
+<a name='L85'></a><a href='#L85'>85</a>
+<a name='L86'></a><a href='#L86'>86</a>
+<a name='L87'></a><a href='#L87'>87</a>
+<a name='L88'></a><a href='#L88'>88</a>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a>
+<a name='L99'></a><a href='#L99'>99</a>
+<a name='L100'></a><a href='#L100'>100</a>
+<a name='L101'></a><a href='#L101'>101</a>
+<a name='L102'></a><a href='#L102'>102</a>
+<a name='L103'></a><a href='#L103'>103</a>
+<a name='L104'></a><a href='#L104'>104</a>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a>
+<a name='L116'></a><a href='#L116'>116</a>
+<a name='L117'></a><a href='#L117'>117</a>
+<a name='L118'></a><a href='#L118'>118</a>
+<a name='L119'></a><a href='#L119'>119</a>
+<a name='L120'></a><a href='#L120'>120</a>
+<a name='L121'></a><a href='#L121'>121</a>
+<a name='L122'></a><a href='#L122'>122</a>
+<a name='L123'></a><a href='#L123'>123</a>
+<a name='L124'></a><a href='#L124'>124</a>
+<a name='L125'></a><a href='#L125'>125</a>
+<a name='L126'></a><a href='#L126'>126</a>
+<a name='L127'></a><a href='#L127'>127</a>
+<a name='L128'></a><a href='#L128'>128</a>
+<a name='L129'></a><a href='#L129'>129</a>
+<a name='L130'></a><a href='#L130'>130</a>
+<a name='L131'></a><a href='#L131'>131</a>
+<a name='L132'></a><a href='#L132'>132</a>
+<a name='L133'></a><a href='#L133'>133</a>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a>
+<a name='L143'></a><a href='#L143'>143</a>
+<a name='L144'></a><a href='#L144'>144</a>
+<a name='L145'></a><a href='#L145'>145</a>
+<a name='L146'></a><a href='#L146'>146</a>
+<a name='L147'></a><a href='#L147'>147</a>
+<a name='L148'></a><a href='#L148'>148</a>
+<a name='L149'></a><a href='#L149'>149</a>
+<a name='L150'></a><a href='#L150'>150</a>
+<a name='L151'></a><a href='#L151'>151</a>
+<a name='L152'></a><a href='#L152'>152</a>
+<a name='L153'></a><a href='#L153'>153</a>
+<a name='L154'></a><a href='#L154'>154</a>
+<a name='L155'></a><a href='#L155'>155</a>
+<a name='L156'></a><a href='#L156'>156</a>
+<a name='L157'></a><a href='#L157'>157</a>
+<a name='L158'></a><a href='#L158'>158</a>
+<a name='L159'></a><a href='#L159'>159</a>
+<a name='L160'></a><a href='#L160'>160</a>
+<a name='L161'></a><a href='#L161'>161</a>
+<a name='L162'></a><a href='#L162'>162</a>
+<a name='L163'></a><a href='#L163'>163</a>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a>
+<a name='L175'></a><a href='#L175'>175</a>
+<a name='L176'></a><a href='#L176'>176</a>
+<a name='L177'></a><a href='#L177'>177</a>
+<a name='L178'></a><a href='#L178'>178</a>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a>
+<a name='L185'></a><a href='#L185'>185</a>
+<a name='L186'></a><a href='#L186'>186</a>
+<a name='L187'></a><a href='#L187'>187</a>
+<a name='L188'></a><a href='#L188'>188</a>
+<a name='L189'></a><a href='#L189'>189</a>
+<a name='L190'></a><a href='#L190'>190</a>
+<a name='L191'></a><a href='#L191'>191</a>
+<a name='L192'></a><a href='#L192'>192</a>
+<a name='L193'></a><a href='#L193'>193</a>
+<a name='L194'></a><a href='#L194'>194</a>
+<a name='L195'></a><a href='#L195'>195</a>
+<a name='L196'></a><a href='#L196'>196</a>
+<a name='L197'></a><a href='#L197'>197</a>
+<a name='L198'></a><a href='#L198'>198</a>
+<a name='L199'></a><a href='#L199'>199</a>
+<a name='L200'></a><a href='#L200'>200</a>
+<a name='L201'></a><a href='#L201'>201</a>
+<a name='L202'></a><a href='#L202'>202</a>
+<a name='L203'></a><a href='#L203'>203</a>
+<a name='L204'></a><a href='#L204'>204</a>
+<a name='L205'></a><a href='#L205'>205</a>
+<a name='L206'></a><a href='#L206'>206</a>
+<a name='L207'></a><a href='#L207'>207</a>
+<a name='L208'></a><a href='#L208'>208</a>
+<a name='L209'></a><a href='#L209'>209</a>
+<a name='L210'></a><a href='#L210'>210</a>
+<a name='L211'></a><a href='#L211'>211</a>
+<a name='L212'></a><a href='#L212'>212</a>
+<a name='L213'></a><a href='#L213'>213</a>
+<a name='L214'></a><a href='#L214'>214</a>
+<a name='L215'></a><a href='#L215'>215</a>
+<a name='L216'></a><a href='#L216'>216</a>
+<a name='L217'></a><a href='#L217'>217</a>
+<a name='L218'></a><a href='#L218'>218</a>
+<a name='L219'></a><a href='#L219'>219</a>
+<a name='L220'></a><a href='#L220'>220</a>
+<a name='L221'></a><a href='#L221'>221</a>
+<a name='L222'></a><a href='#L222'>222</a>
+<a name='L223'></a><a href='#L223'>223</a>
+<a name='L224'></a><a href='#L224'>224</a>
+<a name='L225'></a><a href='#L225'>225</a>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a>
+<a name='L254'></a><a href='#L254'>254</a>
+<a name='L255'></a><a href='#L255'>255</a>
+<a name='L256'></a><a href='#L256'>256</a>
+<a name='L257'></a><a href='#L257'>257</a>
+<a name='L258'></a><a href='#L258'>258</a>
+<a name='L259'></a><a href='#L259'>259</a>
+<a name='L260'></a><a href='#L260'>260</a>
+<a name='L261'></a><a href='#L261'>261</a>
+<a name='L262'></a><a href='#L262'>262</a>
+<a name='L263'></a><a href='#L263'>263</a>
+<a name='L264'></a><a href='#L264'>264</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">21824x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">21824x</span>
+<span class="cline-any cline-yes">21824x</span>
+<span class="cline-any cline-yes">21824x</span>
+<span class="cline-any cline-yes">21824x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">278x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">48601x</span>
+<span class="cline-any cline-yes">48601x</span>
+<span class="cline-any cline-yes">48601x</span>
+<span class="cline-any cline-yes">15283x</span>
+<span class="cline-any cline-yes">15283x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">32552x</span>
+<span class="cline-any cline-yes">6329x</span>
+<span class="cline-any cline-yes">6329x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">21824x</span>
+<span class="cline-any cline-yes">21824x</span>
+<span class="cline-any cline-yes">21824x</span>
+<span class="cline-any cline-yes">21823x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">9806x</span>
+<span class="cline-any cline-yes">9806x</span>
+<span class="cline-any cline-yes">9806x</span>
+<span class="cline-any cline-yes">9806x</span>
+<span class="cline-any cline-yes">9806x</span>
+<span class="cline-any cline-yes">9806x</span>
+<span class="cline-any cline-yes">9806x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">9804x</span>
+<span class="cline-any cline-yes">9804x</span>
+<span class="cline-any cline-yes">9804x</span>
+<span class="cline-any cline-yes">9806x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">9804x</span>
+<span class="cline-any cline-yes">9804x</span>
+<span class="cline-any cline-yes">9804x</span>
+<span class="cline-any cline-yes">9804x</span>
+<span class="cline-any cline-yes">9804x</span>
+<span class="cline-any cline-yes">9804x</span>
+<span class="cline-any cline-yes">9804x</span>
+<span class="cline-any cline-yes">9804x</span>
+<span class="cline-any cline-yes">9804x</span>
+<span class="cline-any cline-yes">9804x</span>
+<span class="cline-any cline-yes">9804x</span>
+<span class="cline-any cline-yes">9804x</span>
+<span class="cline-any cline-yes">9806x</span>
+<span class="cline-any cline-yes">26960x</span>
+<span class="cline-any cline-yes">26960x</span>
+<span class="cline-any cline-yes">26960x</span>
+<span class="cline-any cline-yes">26960x</span>
+<span class="cline-any cline-yes">26960x</span>
+<span class="cline-any cline-yes">26960x</span>
+<span class="cline-any cline-yes">26960x</span>
+<span class="cline-any cline-yes">26960x</span>
+<span class="cline-any cline-yes">26960x</span>
+<span class="cline-any cline-yes">26960x</span>
+<span class="cline-any cline-yes">26960x</span>
+<span class="cline-any cline-yes">43436x</span>
+<span class="cline-any cline-yes">43436x</span>
+<span class="cline-any cline-yes">26960x</span>
+<span class="cline-any cline-yes">26960x</span>
+<span class="cline-any cline-yes">26960x</span>
+<span class="cline-any cline-yes">9804x</span>
+<span class="cline-any cline-yes">9804x</span>
+<span class="cline-any cline-yes">9806x</span>
+<span class="cline-any cline-yes">26494x</span>
+<span class="cline-any cline-yes">26494x</span>
+<span class="cline-any cline-yes">26494x</span>
+<span class="cline-any cline-yes">26494x</span>
+<span class="cline-any cline-yes">26494x</span>
+<span class="cline-any cline-yes">5489x</span>
+<span class="cline-any cline-yes">26494x</span>
+<span class="cline-any cline-yes">4940x</span>
+<span class="cline-any cline-yes">4940x</span>
+<span class="cline-any cline-yes">26494x</span>
+<span class="cline-any cline-yes">9804x</span>
+<span class="cline-any cline-yes">9806x</span>
+<span class="cline-any cline-yes">270x</span>
+<span class="cline-any cline-yes">270x</span>
+<span class="cline-any cline-yes">270x</span>
+<span class="cline-any cline-yes">270x</span>
+<span class="cline-any cline-yes">270x</span>
+<span class="cline-any cline-yes">270x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">270x</span>
+<span class="cline-any cline-yes">270x</span>
+<span class="cline-any cline-yes">270x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">9804x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-yes">101x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * @file treeshake.js
+ * @description Decides which modules an application actually needs.
+ *
+ * ## What was impossible before, and why
+ *
+ * The build prepended `dist/runtime.min.js` — one pre-bundled blob — to every
+ * application. Nothing about that arrangement admits the question "does this
+ * application use the trace recorder?", because by the time the compiler ran,
+ * the recorder had already been fused into a single artifact. Shaking is not a
+ * feature that was missing; it was unaskable.
+ *
+ * With the runtime consumed as modules the question is answerable, and this
+ * file answers it.
+ *
+ * ## The rule, and its one deliberate departure from the specification
+ *
+ * Two kinds of edge are treated differently, which is the whole mechanism:
+ *
+ * - **A plain `import` always executes its target.** That is what ES modules
+ *   do, and the runtime depends on it: `reactive/proxyHandler.js` calls
+ *   `setPathResolver(getPropertyPath)` at its top level, and that call has to
+ *   happen. No analysis here will ever drop a module that something imports.
+ *
+ * - **A re-export edge is followed only for the names that are needed.** A
+ *   barrel is a routing table, and `export { startRecording } from
+ *   './trace/recorder.js'` in a barrel nobody asks `startRecording` of is a
+ *   route to nowhere. Strictly, the specification says that re-export executes
+ *   `recorder.js`; every bundler departs from it here, because otherwise no
+ *   barrel is ever shakeable and `avenx-core/runtime` is a barrel.
+ *
+ * The departure is bounded rather than blanket. A re-export target is still
+ * kept when it has a top-level side effect of its own — an expression statement
+ * rather than a declaration — or when its package declares itself effectful
+ * through `sideEffects` in `package.json`. Exactly one module in the Avenx
+ * runtime has such a statement, and it is reached by a plain import anyway.
+ *
+ * ## What this does not do
+ *
+ * It does not remove unused *declarations inside* a module that is kept.
+ * Statement-level elimination needs a real identifier analysis, and a
+ * bundler that guesses at that miscompiles code rather than shrinking it.
+ * The honest consequence is stated in the build's own reporting: what
+ * shaking removes here is whole modules, and the fixed cost of a module that
+ * something imports is its whole source.
+ * @module lib/bundler/treeshake
+ */
+&nbsp;
+import fs from 'fs';
+import path from 'path';
+&nbsp;
+/**
+ * The wildcard standing for "every export of this module is needed".
+ * @type {string}
+ */
+const ALL = '*';
+&nbsp;
+/**
+ * Whether a module runs code at its top level beyond declaring things.
+ *
+ * An expression statement at module scope is a side effect: it happens when the
+ * module is evaluated and nothing else will make it happen. A declaration is
+ * not, even when its initialiser calls something — that is the standard
+ * assumption every bundler makes, and abandoning it would keep every module
+ * that ever writes `const x = new Thing()`.
+ * @param {object} module - A graph module.
+ * @returns {boolean} True when the module must run if it is reached at all.
+ */
+export function hasTopLevelEffects(module) {
+  if (module.format !== 'esm') <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    // A CommonJS module's body is an assignment to `module.exports` and</span>
+<span class="cstat-no" title="statement not covered" >    // whatever else it likes. Nothing here can tell those apart.</span>
+<span class="cstat-no" title="statement not covered" >    return true;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+  return module.record.statements.some(
+    (statement) =&gt; statement.kind === 'statement' &amp;&amp; statement.declares.length === 0,
+  );
+}
+&nbsp;
+/**
+ * Reads the `sideEffects` declaration of the package a module belongs to.
+ *
+ * `"sideEffects": false` is the convention a package uses to say its modules
+ * can be dropped when unused. It is honoured for third-party packages, where
+ * this analysis has no other way to know.
+ * @param {string} file - Absolute module path.
+ * @param {Map&lt;string, boolean|null&gt;} cache - Per-directory answers.
+ * @returns {boolean|null} False when the package declares itself pure, true
+ *   when it declares effects, null when it says nothing.
+ */
+function packageSideEffects(file, cache) {
+  let dir = path.dirname(file);
+  for (;;) {
+    if (cache.has(dir)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      return cache.get(dir);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+    const manifestPath = path.join(dir, 'package.json');
+    if (fs.existsSync(manifestPath)) {
+      let answer = null;
+      try {
+        const manifest = JSON.parse(fs.readFileSync(manifestPath, 'utf-8'));
+        if (manifest.sideEffects === false) answer = false;
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >        else if (manifest.sideEffects === true) answer = true;</span></span>
+      } <span class="branch-0 cbranch-no" title="branch not covered" >catch {</span>
+<span class="cstat-no" title="statement not covered" >        answer = null;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+      cache.set(dir, answer);
+      return answer;
+    }
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >    const parent = path.dirname(dir);</span></span>
+<span class="cstat-no" title="statement not covered" >    if (parent === dir) {</span>
+<span class="cstat-no" title="statement not covered" >      cache.set(dir, null);</span>
+<span class="cstat-no" title="statement not covered" >      return null;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="cstat-no" title="statement not covered" >    dir = parent;</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+}
+&nbsp;
+/**
+ * Works out which modules the bundle must contain.
+ * @param {object} options - Shake options.
+ * @param {object} options.graph - The linked module graph.
+ * @param {string[]} options.order - Modules in emission order.
+ * @param {Map&lt;string, string[]&gt;} [options.entryNeeds] - Export names an entry's
+ *   consumer requires, keyed by entry id. `['*']` means the whole namespace.
+ * @returns {Set&lt;string&gt;} Module ids to emit.
+ */
+export function shake({ graph, order, entryNeeds = new Map() }) {
+  /** @type {Map&lt;string, Set&lt;string&gt;&gt;} */
+  const needed = new Map();
+  /** @type {Set&lt;string&gt;} */
+  const executed = new Set();
+  const effectsCache = new Map();
+&nbsp;
+  const need = (id, name) =&gt; {
+    if (!needed.has(id)) needed.set(id, new Set());
+    const set = needed.get(id);
+    if (set.has(ALL) || set.has(name)) return false;
+    set.add(name);
+    return true;
+  };
+&nbsp;
+  const queue = [];
+  const execute = (id) =&gt; {
+    if (executed.has(id)) return;
+    executed.add(id);
+    queue.push(id);
+  };
+&nbsp;
+  for (const entry of graph.entries) {
+    execute(entry);
+    for (const name of entryNeeds.get(entry) || []) {
+      need(entry, name);
+    }
+  }
+&nbsp;
+  /**
+   * Whether a module must be kept even though none of its exports are wanted.
+   * @param {object} module - The graph module.
+   * @returns {boolean} True when dropping it would change behaviour.
+   */
+  const mustKeep = (module) =&gt; {
+    const declared = module.external ? packageSideEffects(module.id, effectsCache) : null;
+    if (declared === false) return false;
+    if (declared === true) <span class="branch-0 cbranch-no" title="branch not covered" >return true;</span>
+    return hasTopLevelEffects(module);
+  };
+&nbsp;
+  while (queue.length &gt; 0) {
+    const id = queue.shift();
+    const module = graph.modules.get(id);
+    if (!module) <span class="branch-0 cbranch-no" title="branch not covered" >continue;</span>
+&nbsp;
+    const wanted = needed.get(id) || new Set();
+&nbsp;
+    if (module.format === 'cjs') {
+      // Nothing about a CommonJS module's exports is static, so every module it
+      // requires is needed.
+      for (const target of module.resolved.values()) {
+        execute(target);
+      }
+      continue;
+    }
+&nbsp;
+    // A dynamic import needs the whole namespace: nothing here can say which
+    // member the awaiting code will read.
+    for (const entry of module.record.dynamicImports) {
+      const target = entry.specifier === null <span class="branch-0 cbranch-no" title="branch not covered" >? null </span>: module.resolved.get(entry.specifier);
+      if (!target) <span class="branch-0 cbranch-no" title="branch not covered" >continue;</span>
+      const walked = executed.has(target);
+      execute(target);
+      if (need(target, ALL) &amp;&amp; walked) <span class="branch-0 cbranch-no" title="branch not covered" >queue.push(target);</span>
+    }
+&nbsp;
+    // A plain import executes its target, exactly as the language says.
+    //
+    // Wanting a name from a module that has *already* been walked has to put it
+    // back on the queue. A module resolves its own re-exports only while it is
+    // being walked, so a name first wanted after that point would never be
+    // followed to the module that actually defines it -- the re-export would be
+    // dropped and the importer would destructure `undefined` at run time. The
+    // re-export loop below has always re-queued for this reason; these two did
+    // not, and the difference only showed once a generated component module --
+    // which is linked after the runtime it imports from -- became the first
+    // consumer of a re-exported name.
+    for (const entry of module.record.imports) {
+      const target = module.resolved.get(entry.specifier);
+      if (!target) <span class="branch-0 cbranch-no" title="branch not covered" >continue;</span>
+      const walked = executed.has(target);
+      execute(target);
+&nbsp;
+      // `need` is called for its effect on every branch, so the accumulator is
+      // written this way round: `added || need(...)` would stop calling it.
+      let added = false;
+      if (entry.namespace) <span class="branch-0 cbranch-no" title="branch not covered" >added = need(target, ALL) || added;</span>
+      if (entry.defaultLocal) added = need(target, 'default') || added;
+      for (const binding of entry.bindings) {
+        added = need(target, binding.imported) || added;
+      }
+&nbsp;
+      if (added &amp;&amp; walked) queue.push(target);
+    }
+&nbsp;
+    // A re-export is followed only for the names something asked for.
+    for (const entry of module.record.reExports) {
+      const target = module.resolved.get(entry.specifier);
+      if (!target) <span class="branch-0 cbranch-no" title="branch not covered" >continue;</span>
+      const targetModule = graph.modules.get(target);
+      const asked = wanted.has(ALL) || wanted.has(entry.exported);
+      if (!asked &amp;&amp; targetModule &amp;&amp; !mustKeep(targetModule)) continue;
+      execute(target);
+      if (asked) {
+        if (need(target, entry.imported) &amp;&amp; executed.has(target)) queue.push(target);
+      }
+    }
+&nbsp;
+    for (const entry of module.record.starReExports) {
+      const target = module.resolved.get(entry.specifier);
+      if (!target) <span class="branch-0 cbranch-no" title="branch not covered" >continue;</span>
+      const targetModule = graph.modules.get(target);
+      if (!targetModule) <span class="branch-0 cbranch-no" title="branch not covered" >continue;</span>
+&nbsp;
+      if (wanted.has(ALL)) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >        execute(target);</span>
+<span class="cstat-no" title="statement not covered" >        need(target, ALL);</span>
+<span class="cstat-no" title="statement not covered" >        queue.push(target);</span>
+<span class="cstat-no" title="statement not covered" >        continue;</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+&nbsp;
+      const shared = [...wanted].filter((name) =&gt; targetModule.exportNames.has(name));
+      if (shared.length === 0 &amp;&amp; !mustKeep(targetModule)) continue;
+<span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >      execute(target);</span></span>
+<span class="cstat-no" title="statement not covered" >      for (const name of shared) {</span>
+<span class="cstat-no" title="statement not covered" >        if (need(target, name)) queue.push(target);</span>
+<span class="cstat-no" title="statement not covered" >      }</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+  }
+&nbsp;
+  // Preserve emission order rather than discovery order: the emitter relies on
+  // dependencies coming first, and that property belongs to the topological
+  // sort, not to this traversal.
+  return new Set(order.filter((id) =&gt; executed.has(id)));
+}
+&nbsp;</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
+                at 2026-09-19T13:47:51.347Z
+            </div>
+        <script src="../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
+    </body>
+</html>
+    
