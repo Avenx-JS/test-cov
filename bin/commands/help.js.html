@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>65/65</span>
+                <span class='fraction'>72/72</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>65/65</span>
+                <span class='fraction'>72/72</span>
             </div>
         
             
@@ -127,12 +127,26 @@
 <a name='L62'></a><a href='#L62'>62</a>
 <a name='L63'></a><a href='#L63'>63</a>
 <a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">406x</span>
-<span class="cline-any cline-yes">406x</span>
-<span class="cline-any cline-yes">406x</span>
-<span class="cline-any cline-yes">406x</span>
-<span class="cline-any cline-yes">406x</span>
-<span class="cline-any cline-yes">406x</span>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a>
+<a name='L69'></a><a href='#L69'>69</a>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">418x</span>
+<span class="cline-any cline-yes">418x</span>
+<span class="cline-any cline-yes">418x</span>
+<span class="cline-any cline-yes">418x</span>
+<span class="cline-any cline-yes">418x</span>
+<span class="cline-any cline-yes">418x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">36x</span>
+<span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-yes">36x</span>
 <span class="cline-any cline-yes">36x</span>
@@ -234,9 +248,12 @@ ${bold(cyan('Commands:'))}
 ${bold(cyan('Options:'))}
   ${green('--layout &lt;blank|routing&gt;')}  ${gray('Specify project layout template for init (default: blank)')}
   ${green('--style &lt;none|sass|...&gt;')}   ${gray('Specify CSS preprocessor for init (none, sass, less, postcss)')}
+  ${green('--yes, -y')}                 ${gray('Skip the "init" wizard and take the defaults (none, blank)')}
+  ${green('--interactive, -i')}         ${gray('Run the "init" wizard even when stdin or stdout is not a TTY')}
   ${green('--dev')}                     ${gray('Build for development: readable runtime, inline CSS source maps')}
   ${green('--prod')}                    ${gray('Build for production (the default for "build")')}
   ${green('--csp-strict')}              ${gray('Refuse any output needing \'unsafe-eval\', in development builds too')}
+  ${green('--code-splitting, --split')} ${gray('Emit each page as its own chunk in &lt;distDir&gt;/pages/ ("build" only)')}
   ${green('--dry-run, -d')}             ${gray('Preview actions without writing or deleting any files')}
   ${green('--force, -f')}               ${gray('Force overwrite existing files during scaffold generation')}
   ${green('--with-test')}               ${gray('Generate a colocated unit test file alongside the component')}
@@ -245,14 +262,18 @@ ${bold(cyan('Options:'))}
   ${green('--json, -j')}                ${gray('Machine-readable output for check, atlas, impact, why and explain (explain: --json only)')}
   ${green('--depth=&lt;n&gt;')}               ${gray('How many hops "impact" and "why" follow (default: 12)')}
   ${green('--watch, -w')}               ${gray('Watch project component files for continuous template linting')}
+  ${green('--strict, --strict-a11y')}   ${gray('Make "check" fail on accessibility warnings too')}
   ${green('--no-color')}                ${gray('Disable colored output (the NO_COLOR variable is honored too)')}
   ${green('--port, -p &lt;port&gt;')}         ${gray('Port for "serve" (else a bare port arg, then PORT, config server.port, 3000)')}
   ${green('--host, -h &lt;host&gt;')}         ${gray('Host for "serve" to bind (default: localhost)')}
   ${green('--open, -o')}                ${gray('Open a browser when "serve" starts')}
   ${green('--no-live-reload')}          ${gray('Disable live reload while serving')}
+  ${green('--no-error-overlay')}        ${gray('Do not show build diagnostics as a browser overlay while serving')}
   ${green('--trace')}                   ${gray('Record a causal trace while serving (dev only, off by default)')}
+  ${green('--roots=&lt;n&gt;')}               ${gray('Show only the first n causal roots in "trace view"')}
   ${green('--out, -o &lt;file&gt;')}          ${gray('Where "trace export" writes the generated regression test')}
   ${green('--keep=&lt;n&gt;, --all')}         ${gray('How much "trace prune" removes')}
+  ${green('--help')}                    ${gray('Show this help for any command, before it runs')}
   ${green('--version, -v')}             ${gray('Output the current version')}
     `);
 }</pre></td></tr></table></pre>
@@ -262,7 +283,7 @@ ${bold(cyan('Options:'))}
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-11-07T16:13:35.290Z
+                at 2026-11-14T16:28:57.639Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

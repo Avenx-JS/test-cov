@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.28% </span>
+                <span class="strong">87.3% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>206/236</span>
+                <span class='fraction'>220/252</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">77.77% </span>
+                <span class="strong">74.35% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>28/36</span>
+                <span class='fraction'>29/39</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">90% </span>
+                <span class="strong">90.9% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>9/10</span>
+                <span class='fraction'>10/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.28% </span>
+                <span class="strong">87.3% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>206/236</span>
+                <span class='fraction'>220/252</span>
             </div>
         
             
@@ -299,7 +299,23 @@
 <a name='L234'></a><a href='#L234'>234</a>
 <a name='L235'></a><a href='#L235'>235</a>
 <a name='L236'></a><a href='#L236'>236</a>
-<a name='L237'></a><a href='#L237'>237</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<a name='L237'></a><a href='#L237'>237</a>
+<a name='L238'></a><a href='#L238'>238</a>
+<a name='L239'></a><a href='#L239'>239</a>
+<a name='L240'></a><a href='#L240'>240</a>
+<a name='L241'></a><a href='#L241'>241</a>
+<a name='L242'></a><a href='#L242'>242</a>
+<a name='L243'></a><a href='#L243'>243</a>
+<a name='L244'></a><a href='#L244'>244</a>
+<a name='L245'></a><a href='#L245'>245</a>
+<a name='L246'></a><a href='#L246'>246</a>
+<a name='L247'></a><a href='#L247'>247</a>
+<a name='L248'></a><a href='#L248'>248</a>
+<a name='L249'></a><a href='#L249'>249</a>
+<a name='L250'></a><a href='#L250'>250</a>
+<a name='L251'></a><a href='#L251'>251</a>
+<a name='L252'></a><a href='#L252'>252</a>
+<a name='L253'></a><a href='#L253'>253</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -322,6 +338,10 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -349,6 +369,9 @@
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">35x</span>
 <span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-yes">35x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">35x</span>
 <span class="cline-any cline-yes">35x</span>
 <span class="cline-any cline-yes">8x</span>
@@ -532,15 +555,24 @@
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
 <span class="cline-any cline-yes">18x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import fs from 'node:fs';
 import path from 'node:path';
-import StyleProcessor from '../../../lib/compiler/StyleProcessor.js';
-import ComponentParser from '../../../lib/compiler/ComponentParser.js';
-import { AvenxErrorCodes } from '../../../lib/core/runtime/AvenxError.js';
-import { BuildError } from '../../../lib/compiler/errors/index.js';
+// Through the peer dependency's published entry, never a path into the
+// repository: `../../../lib/...` resolves only in a checkout, so a published
+// plugin that imported it would fail before Vite called a single hook.
+import { StyleProcessor, ComponentParser, AvenxErrorCodes, BuildError } from 'avenx-core/integration';
 import { wrapComponent, wrapPage } from './wrapper.js';
 import { generateTemplateSourceMap } from './sourcemap.js';
 import { COMPONENT_CSS_EXT, PAGE_CSS_EXT } from './constants.js';
@@ -559,6 +591,10 @@ const MODULE_EXTENSIONS = ['.js', '.html', '.avx'];
  */
 export function createCompiler(options = {}) {
   const debug = options.debug ?? false;
+  let isProduction =
+    options.production === true ||
+    options.mode === 'production' ||
+    Boolean(options.config <span class="branch-0 cbranch-no" title="branch not covered" >&amp;&amp; options.config.mode === 'production')</span>;
 &nbsp;
   /**
    * Whether this project asked for a build that needs no `'unsafe-eval'`.
@@ -585,6 +621,9 @@ export function createCompiler(options = {}) {
   function createParser() {
     const styleProcessor = new StyleProcessor(options.style || {}, options.config || null);
     const parser = new ComponentParser(styleProcessor, options.voidTags || [], options.config || null);
+    if (isProduction) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >      parser.production = true;</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
     return { parser, styleProcessor };
   }
 &nbsp;
@@ -769,6 +808,15 @@ export function createCompiler(options = {}) {
       const { css } = compileModule(owner, type);
       return css;
     },
+&nbsp;
+    /**
+     * Sets the production mode status.
+     * @param {boolean} value
+     * @returns {void}
+     */
+    setProduction(value) {
+      isProduction = Boolean(value);
+    },
   };
 }
 &nbsp;</pre></td></tr></table></pre>
@@ -778,7 +826,7 @@ export function createCompiler(options = {}) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-11-07T16:13:35.290Z
+                at 2026-11-14T16:28:57.639Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
